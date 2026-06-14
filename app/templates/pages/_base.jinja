@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="urf-8">
+    <title>Flask Demo</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Flask Demo</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/demo">Demo</a>
+            <a href="/cats">Cats</a>
+            <a href="/thing/1">Thing</a>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>

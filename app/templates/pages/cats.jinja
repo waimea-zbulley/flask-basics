@@ -1,0 +1,19 @@
+{% extends "pages/_base.jinja" %}
+
+{% block content %}
+
+<h1>List of Cats</h1>
+
+<p>The list below comes from data passed in...</p>
+
+<ul>
+
+    {% for cat in cats %}
+        
+        <li>{{ cat.name }} has id: {{ cat.id }}</li>
+
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

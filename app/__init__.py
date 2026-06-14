@@ -10,6 +10,28 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 
 
+cats = [
+    {
+        "id" : 1,
+        "name" : "Dave"
+    },
+    {
+        "id" : 2,
+        "name" : "Ellis"
+    },
+    {
+        "id" : 3,
+        "name" : "Zander"
+    },
+    {
+        "id" : 4,
+        "name" : "Jeff"
+    }
+    ]
+
+def get_cat(id):
+    return next((item for item in cats if item["id"] == id), None)
+
 #===========================================================
 # App Routes Handlers
 #===========================================================
@@ -19,9 +41,36 @@ app = Flask(__name__)
 #-----------------------------------------------------------
 @app.get("/")
 def show_welcome():
-    return "Hello!"
+    return render_template("pages/home.jinja")
 
 
+
+@app.get("/demo")
+def show_demo_message():
+    return render_template("pages/demo.jinja")
+
+#-----------------------------------------------------------
+# Matching an ID
+#-----------------------------------------------------------
+@app.get("/thing/<int:id>")
+def show_id_message(id):
+    print(f"Found ID: {id}")
+
+    return render_template("pages/id.jinja", id=id)
+
+
+@app.get("/cats")
+def show_message_with_list():
+    return render_template("pages/cats.jinja", cats=cats)
+
+@app.get("/cat/<int:id>")
+def show_a_cat(id):
+    cat = get_cat(id)
+
+    if cat:
+        return render_template("pages/cat.jinja", cat=cat)
+    else:
+        abort(404)
 #===========================================================
 # Configure the app
 #===========================================================
