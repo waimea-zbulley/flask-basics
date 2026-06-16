@@ -13,19 +13,26 @@ app = Flask(__name__)
 cats = [
     {
         "id" : 1,
-        "name" : "Dave"
+        "name" : "Dave",
+        "image" : "cat1.jpg"
     },
     {
         "id" : 2,
-        "name" : "Ellis"
+        "name" : "Ellis",
+        "image" : "cat2.jpg"
+
     },
     {
         "id" : 3,
-        "name" : "Zander"
+        "name" : "Zander",
+        "image" : "cat3.jpg"
+
     },
     {
         "id" : 4,
-        "name" : "Jeff"
+        "name" : "Jeff",
+        "image" : "cat4.jpg"
+
     }
     ]
 

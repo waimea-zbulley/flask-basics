@@ -4,16 +4,22 @@
 
 <h1> {{ cat.name }}'s profile </h1>
 
-<p>The list below comes from data passed in...</p>
 
-<ul>
+<div class="panel">
 
-    
+        <img src="/static/images/{{ cat.image }}" alt="Picture of {{ cat.name }}">
+
+        <p>The list below comes from data passed in...</p>
+
+        <ul>
+
+
+                <li>{{ cat.name }} is epic and has id: {{ cat.id }}</li>
+
         
-        <li>{{ cat.name }} is epic and has id: {{ cat.id }}</li>
 
-    
+        </ul>
 
-</ul>
+</div>
 
 {% endblock %}
